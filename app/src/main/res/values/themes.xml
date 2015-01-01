@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CustomMaterial" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- <item name="actionBarStyle">@style/CustomActionBarStyle</item> -->
+        <item name="searchViewStyle">@style/CustomSearchViewStyle</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/secondary</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <!-- The Hamburger Menu Icon -->
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <!-- Search View style -->
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:autoCompleteTextViewStyle">@style/autoCompleteTextViewStyle</item>
+        <item name="android:hint">@string/search_actionbar_title</item>
+    </style>
+
+    <!-- Auto Complete text view style -->
+    <style name="autoCompleteTextViewStyle" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:textCursorDrawable">@color/white</item>
+        <item name="android:hint">@string/search_actionbar_title</item>
+    </style>
+
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="navDrawerPrimaryList">
+        <item>World</item>
+        <item>Clothes</item>
+        <item>Music</item>
+        <item>Location</item>
+    </string-array>
+    <string-array name="navDrawerSecondaryList">
+        <item>Settings</item>
+        <item>Help</item>
+        <item>Feedback</item>
+    </string-array>
+</resources>
