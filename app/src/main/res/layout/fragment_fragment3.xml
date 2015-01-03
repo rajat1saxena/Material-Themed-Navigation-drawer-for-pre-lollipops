@@ -1,6 +1,10 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="in.raynstudios.materialtheme.Fragment3">
+    android:layout_height="match_parent" tools:context="in.raynstudios.materialtheme.Fragment3"
+    android:paddingRight="@dimen/nav_drawer_main_pad"
+    android:paddingLeft="@dimen/nav_drawer_main_pad"
+    android:paddingTop="@dimen/nav_drawer_main_pad"
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <TextView android:layout_width="match_parent" android:layout_height="match_parent"

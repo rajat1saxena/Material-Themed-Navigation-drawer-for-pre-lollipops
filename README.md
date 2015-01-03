@@ -13,3 +13,6 @@ This is a bare bones material themed navigation drawer project which can be used
 
 ####Min SDK supported
 API 15
+
+####Screenshot
+![Material theme animation](final.png "Animated screen")

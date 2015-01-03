@@ -7,7 +7,10 @@
 
     <include layout="@layout/search_toolbar"></include>
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_width="@dimen/search_icon"
+        android:layout_height="match_parent"
+        android:src="@drawable/magnifier"
+        android:layout_gravity="center"/>
 
 </LinearLayout>
