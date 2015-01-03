@@ -6,7 +6,11 @@
     <dimen name="nav_drawer_text_pad">72dp</dimen>
     <dimen name="nav_drawer_list_item">48dp</dimen>
     <dimen name="nav_drawer_list_text_pad">56dp</dimen>
+
+    <!-- Navigation drawer text size -->
     <dimen name="nav_list_item_text_size">14sp</dimen>
+    <dimen name="nav_list_item_text_size_sel">14sp</dimen>
+
     <dimen name="nav_divider_vertical_spacing">8dp</dimen>
     <dimen name="nav_drawer_right_margin">56dp</dimen>
     <dimen name="nav_drawer_icons">48dp</dimen>

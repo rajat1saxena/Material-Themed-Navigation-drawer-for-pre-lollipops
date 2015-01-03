@@ -4,6 +4,7 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -25,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.support.v7.widget.SearchView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity
@@ -37,6 +39,7 @@ public class MainActivity extends ActionBarActivity
 
     /* Define vars */
     ActionBarDrawerToggle mDrawerToggle;
+    int temppos;
     DrawerLayout mDrawerLayout;
     ListView mListView,mListViewSecondary;
     private String[] mNavDrawerPrimaryList,mNavDrawerSecondaryList;
@@ -168,10 +171,34 @@ public class MainActivity extends ActionBarActivity
         @Override
         public void onItemClick(AdapterView adapterView, View view, int position, long l) {
             selectItem(position);
+
+            // Set textView color
+            resetAllPrimaryTextViews(); // to reset all textviews in primary listview
+            View row = view;
+            TextView txtView = (TextView)view.findViewById(R.id.strListView);
+            txtView.setTypeface(null, Typeface.BOLD);
+            txtView.setTextColor(getResources().getColor(R.color.nav_drawer_list_text_selected));
+
+            ImageView imgView = (ImageView)view.findViewById(R.id.imgListView);
+            imgView.setColorFilter(getResources().getColor(R.color.nav_drawer_list_text_selected));
+        }
+
+        /* This resets all textviews to default typeface NORMAL */
+        private void resetAllPrimaryTextViews() {
+            for(int i=0;i<mListView.getChildCount();i++){
+                View view = mListView.getChildAt(i);
+                TextView txtView = (TextView)view.findViewById(R.id.strListView);
+                txtView.setTypeface(null, Typeface.NORMAL);
+                txtView.setTextColor(getResources().getColor(R.color.nav_drawer_list_text));
+
+                ImageView imgView = (ImageView)view.findViewById(R.id.imgListView);
+                imgView.setColorFilter(getResources().getColor(R.color.nav_drawer_list_text));
+            }
         }
 
         /* Function to swap fragments on item clicks */
-        private void selectItem(int position){
+        private void selectItem(final int position){
+
             Log.d("Output: Item selected ",""+mNavDrawerPrimaryList[position]);
             getSupportActionBar().setTitle(mNavDrawerPrimaryList[position]);
 
@@ -183,9 +210,19 @@ public class MainActivity extends ActionBarActivity
                 FragmentTransaction fragTx = getFragmentManager().beginTransaction();
                 fragTx.replace(R.id.main_fragment_container, Fragment.instantiate(MainActivity.this,frags[position]));
                 fragTx.commit();
-
-                return;
             }
+
+            // Set selected state for this item
+            //final int pos = position;
+            mListView.post(new Runnable() {
+                @Override
+                public void run() {
+                    mListView.requestFocusFromTouch();
+                    mListView.setSelection(position);
+                }
+            });
+
+            return;
 
         }
     }
@@ -201,18 +238,18 @@ public class MainActivity extends ActionBarActivity
         }
 
         /* Function to swap fragments on item clicks */
-        private void selectItem(int position){
+        private void selectItem(final int position){
             Log.d("Output: Item selected ",""+mNavDrawerSecondaryList[position]);
-            getSupportActionBar().setTitle(mNavDrawerSecondaryList[position]);
+            //getSupportActionBar().setTitle(mNavDrawerSecondaryList[position]);
 
             // Close the drawer
             if(mDrawerLayout.isDrawerOpen(Gravity.START|Gravity.LEFT)){
                 mDrawerLayout.closeDrawers();
+
+                // Raise toast
+                Toast.makeText(getApplicationContext(),"Invoke "+mNavDrawerSecondaryList[position]+" activity",Toast.LENGTH_SHORT).show();
                 return;
             }
-
-            // Set selected state for this item
-
         }
     }
 

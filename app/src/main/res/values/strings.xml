@@ -12,5 +12,6 @@
     <string name="frag3_text">This is Fragment: Music</string>
     <string name="frag4_text">This is Fragment: Location</string>
     <string name="welcome_text">Hello Mate, This is your awesome material theme</string>
+    <string name="toast_text">Invoke a new activity</string>
 
 </resources>

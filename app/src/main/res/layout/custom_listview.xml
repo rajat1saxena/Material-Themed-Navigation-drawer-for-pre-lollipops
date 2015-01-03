@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/nav_drawer_main_pad"
         android:paddingRight="@dimen/nav_drawer_main_pad"
+        android:tint="@color/nav_drawer_list_text"
         android:id="@+id/imgListView"/>
     <TextView
         android:layout_width="wrap_content"
