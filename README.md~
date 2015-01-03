@@ -16,3 +16,6 @@ API 15
 
 ####Screenshot
 ![Material theme animation](final.gif "Animated screen")
+
+####Conclusion
+You can email me at rajat@raynstudios.in if you need help in using this app
